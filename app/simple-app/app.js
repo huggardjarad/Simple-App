@@ -1,23 +1,9 @@
 const express = require('express');
 const app = express();
-// Outline a json response with the env variables
-function buildResponse() {
-    return {
-        myapplication: [
-            {
-            version: process.env.VERSION || 'VERSION_not_found',
-            description: 'pre-interview technical test',
-            lastcommitsha: process.env.LAST_COMMIT || 'LAST_COMMIT_not_found'
-            }
-        ]
-    };
-}
 
 app.get('/', (req, res) => {
     try {
-        res.status(200).send({
-            message: 'Technical Challenge, please see /healthcheck for application information'
-        });
+        res.status(200).sendFile('views/front.html', {root: __dirname })
     } catch (err) {
         console.log('ERROR: ', err);
     }
@@ -25,7 +11,7 @@ app.get('/', (req, res) => {
 
 app.get('/healthcheck', (req, res) => {
     try {
-        res.status(200).send(buildResponse());
+        res.status(200).sendFile('views/index.html', {root: __dirname })
     } catch (err) {
         console.log('ERROR: ', err);
     }
