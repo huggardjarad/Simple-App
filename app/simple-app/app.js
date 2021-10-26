@@ -5,9 +5,9 @@ function buildResponse() {
     return {
         myapplication: [
             {
-            version: process.env.VERSION || 'Development Version',
-            description: 'This is the development environment application',
-            lastcommitsha: process.env.LAST_COMMIT || 'DEV'
+            version: process.env.VERSION || 'New Development Version',
+            description: 'This is the newest development environment application',
+            lastcommitsha: process.env.LAST_COMMIT || 'NEW DEV'
             }
         ]
     };
