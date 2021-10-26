@@ -5,9 +5,9 @@ function buildResponse() {
     return {
         myapplication: [
             {
-            version: process.env.VERSION || 'Third New Development Version',
-            description: 'This is the third newest development environment application',
-            lastcommitsha: process.env.LAST_COMMIT || 'NEW DEV'
+            version: process.env.VERSION || '4th development version',
+            description: 'This is the 4th newest development environment application',
+            lastcommitsha: process.env.LAST_COMMIT || 'FOURTH NEW DEV'
             }
         ]
     };
@@ -16,7 +16,7 @@ function buildResponse() {
 app.get('/', (req, res) => {
     try {
         res.status(200).send({
-            message: 'This is the 3rd Development!'
+            message: 'This is the 4th Development!'
         });
     } catch (err) {
         console.log('ERROR: ', err);
