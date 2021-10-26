@@ -5,9 +5,9 @@ function buildResponse() {
     return {
         myapplication: [
             {
-            version: process.env.VERSION || 'VERSION_not_found',
-            description: 'pre-interview technical test',
-            lastcommitsha: process.env.LAST_COMMIT || 'LAST_COMMIT_not_found'
+            version: process.env.VERSION || 'Third New Development Version',
+            description: 'This is the third newest development environment application',
+            lastcommitsha: process.env.LAST_COMMIT || 'NEW DEV'
             }
         ]
     };
@@ -16,7 +16,7 @@ function buildResponse() {
 app.get('/', (req, res) => {
     try {
         res.status(200).send({
-            message: 'Technical Challenge, please see /healthcheck for application information'
+            message: 'This is the 3rd Development!'
         });
     } catch (err) {
         console.log('ERROR: ', err);
