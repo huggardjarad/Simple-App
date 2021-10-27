@@ -31,7 +31,6 @@ describe('Testing response from path: / ', function () {
         });
     });
   });
-  // Testing each JSON object field to ensure they are defined
   describe('response object value(s):', function () {
     it('the json response does not have empty value(s)', function (done) {
       chai.request(app)
@@ -65,23 +64,6 @@ describe('Testing response from path: /healthcheck', function () {
         .get('/healthcheck')
         .end(function (err, res) {
           expect(res.type, 'application/json');
-          expect(err).to.be.null;
-          done();
-        });
-    });
-  });
-  // Testing each JSON object field to ensure they are defined
-  describe('response object value(s):', function () {
-    it('the json response does not have empty value(s)', function (done) {
-      chai.request(app)
-        .get('/healthcheck')
-        .end(function (err, res) {
-          expect(res.type, 'application/json');
-          const responseJson = JSON.parse(res.text);
-          // Check if the value is not null
-          assert.isNotNull(responseJson.myapplication.version);
-          assert.isNotNull(responseJson.myapplication.description);
-          assert.isNotNull(responseJson.myapplication.lastcommitsha);
           expect(err).to.be.null;
           done();
         });
