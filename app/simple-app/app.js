@@ -4,6 +4,7 @@ const app = express();
 app.get('/', (req, res) => {
     try {
         res.status(200).sendFile('views/front.html', {root: __dirname })
+
     } catch (err) {
         console.log('ERROR: ', err);
     }
