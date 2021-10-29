@@ -18,4 +18,4 @@ build:
 	docker-compose build
 
 run:
-	docker run -p 8000:8000 mcallinan/simpleapp:latest
+	docker run -p 8000:8000 jhuggard/simpleapp:latest
