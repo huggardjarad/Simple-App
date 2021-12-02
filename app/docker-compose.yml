@@ -11,5 +11,5 @@ services:
       VERSION: $GIT_VERSION
       LAST_COMMIT: $GIT_COMMIT
     ports:
-      - 8000:8000
+      - 8080:8080
     command: npm start
